@@ -1,4 +1,10 @@
+@import "../partials/colors";
+
 button {
-    border-radius: 25%;
-    background-color: aquamarine;
+    background-color: $--neutral-white;
+    border: none;
+
+    & :hover {
+        cursor: grab;
+    }
 }

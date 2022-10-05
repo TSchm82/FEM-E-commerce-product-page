@@ -1,7 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./partials/button";
 @import "./partials/container";
+@import "./partials/navbar";
+@import "./partials/mobile-menu";
 
 * {
     box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+body {
+    margin: 0;
 }

@@ -1,0 +1,16 @@
+<div class="row">
+    <button class="col-2 nav-menu" (click)=" extendMenu() "><img src="../../assets/images/icon-menu.svg"></button>
+    <div class="col-6 col-xl-3 company-name">Sneakers</div>
+    <div class="col-xl-1 nav-item">Collections</div>
+    <div class="col-xl-1 nav-item">Men</div>
+    <div class="col-xl-1 nav-item">Woman</div>
+    <div class="col-xl-1 nav-item">About</div>
+    <div class="col-xl-1 nav-item">Contact</div>
+
+    <div class="col-2 col-xl-2 nav-icon"><img src="../../assets/images/icon-cart.svg"></div>
+    <div class="col-2 col-xl-2 nav-icon"><img src="../../assets/images/icon-menu.svg"></div>
+</div>
+
+<div>
+    <component-mobile-menu [(isMenuExtended)]=" isMenuExtended "></component-mobile-menu>
+</div>

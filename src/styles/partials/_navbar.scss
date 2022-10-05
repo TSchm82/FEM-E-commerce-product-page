@@ -1,0 +1,36 @@
+@import "colors";
+@import "breakpoints";
+
+@mixin align-nav-item {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.nav-item {
+    @include align-nav-item;
+    color: $--neutral-dark-grayish-blue;
+
+    @include respond-to-max('xl') {
+        display: none;
+    }
+}
+
+.nav-menu {
+    @include align-nav-item;
+
+    @include respond-to-min('xl') {
+        display: none;
+    }
+}
+
+.nav-icon {
+    @include align-nav-item;
+}
+
+.company-name {
+    @include align-nav-item;
+    color: $--neutral-black;
+    font-size: 30px;
+    font-weight: 700;
+}
