@@ -51,6 +51,20 @@
     padding-left: 5%;
     text-align: start;
     color: $--neutral-black;
-    font-size: 30px;
+    font-size: 45px;
     font-weight: 700;
+}
+
+.item-indicator {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: 0;
+    top: 0;
+    background-color: $--primary-orange;
+    border-radius: 50%;
+}
+
+.cartbox {
+    position: relative;
 }

@@ -1,6 +1,8 @@
 <div class="full-width">
     <!--Navbar-->
-    <components-navbar></components-navbar>
+    <components-navbar [counter]=" counter "></components-navbar>
     <!--Item Page-->
     <component-item></component-item>
+    <!--Add to card-->
+    <component-add-to-cart (addItems)=" counter = $event "></component-add-to-cart>
 </div>

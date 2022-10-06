@@ -8,7 +8,12 @@
     <div class="col-xl-1 nav-item">Contact</div>
     <div class="col nav-item"></div>
 
-    <div class="col-2 col-xl-1 nav-icon"><img src="../../assets/images/icon-cart.svg"></div>
+    <div class="col-2 col-xl-1 nav-icon">
+        <div class="cartbox">
+            <img src="../../assets/images/icon-cart.svg">
+            <span *ngIf=" counter > 0 " class="item-indicator">{{ counter }}</span>
+        </div>
+    </div>
     <div class="col-2 col-xl-1">
         <div class="user-pic-container">
             <img class="user-pic" src="../../assets/images/girl.jpg">

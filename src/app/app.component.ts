@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent {
 
+  public counter = 0;
+
   constructor() { }
 
 }

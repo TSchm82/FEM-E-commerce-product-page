@@ -1,9 +1,11 @@
 <div class="item-box full-width">
-    <img class="item-img" src="../../assets/images/image-product-1.jpg">
+    <img id="itemImg" class="item-img">
 
-    <button class="caroussel-box left"><img class="navigation-img" src="../../assets/images/icon-previous.svg"></button>
+    <button *ngIf=" actualImgIndex !== 0 " class="caroussel-box left" (click)="rotateCaroussel(-1)"><img
+            class="navigation-img" src="../../assets/images/icon-previous.svg"></button>
 
-    <button class="caroussel-box right"><img class="navigation-img" src="../../assets/images/icon-next.svg"></button>
+    <button *ngIf=" actualImgIndex !== imgNames.length -1 " class="caroussel-box right"
+        (click)="rotateCaroussel(1)"><img class="navigation-img" src="../../assets/images/icon-next.svg"></button>
 </div>
 
 
@@ -27,8 +29,8 @@
         aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat.</div>
 
-    <div class="d-flex row mt-2 ">
-        <div class="col-auto price">$ 125</div>
+    <div class="d-flex row my-3 ">
+        <div class="col-auto price">$ 125.00</div>
         <div class="col-auto discount">50%</div>
         <div class="col"></div>
         <div class="col-auto regular">$ 250</div>

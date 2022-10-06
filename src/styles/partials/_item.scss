@@ -2,7 +2,7 @@
 
 @mixin highligthed {
     color: $--neutral-black;
-    font-size: 30px;
+    font-size: 36px;
     font-weight: 700;
 }
 
@@ -63,6 +63,7 @@
     background-color: $--primary-pale-orange;
     color: $--primary-orange;
     margin: auto;
+    font-weight: 700;
 }
 
 .regular {

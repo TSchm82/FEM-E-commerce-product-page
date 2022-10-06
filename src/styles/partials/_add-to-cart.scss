@@ -1,0 +1,59 @@
+@import "./navbar";
+@import "./colors";
+
+@mixin add-container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+    border-radius: 5%;
+}
+
+.quantity-container {
+    @include add-container;
+    background-color: $--neutral-light-grayish-blue;
+}
+
+.add-bar-item {
+    @include align-nav-item;
+    width: 33.3%;
+    text-align: center;
+    padding: 2%;
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.add-bar-button {
+    width: 5vw;
+}
+
+.add-bar-img {
+    width: 100%;
+    height: auto;
+}
+
+.cart-container {
+    @include add-container;
+    background-color: $--primary-orange;
+    padding: 2%;
+}
+
+.add-cart-button {
+    text-align: center;
+    background-color: inherit;
+    width: 100%;
+    color: $--neutral-white;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.cart-img {
+    width: 5vw;
+    height: auto;
+}
+
+.white-img {
+    fill: white;
+}

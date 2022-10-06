@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { NavbarComponent } from '../components/navbar/navbar.component';
+import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
 import { ItemComponent } from './item/item.component';
 import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 
@@ -9,7 +10,8 @@ import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
     declarations: [
         NavbarComponent,
         MobileMenuComponent,
-        ItemComponent
+        ItemComponent,
+        AddToCartComponent
     ],
     imports: [
         CommonModule
@@ -17,7 +19,8 @@ import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
     exports: [
         NavbarComponent,
         MobileMenuComponent,
-        ItemComponent
+        ItemComponent,
+        AddToCartComponent
     ]
 })
 export class ComponentsModule { }
