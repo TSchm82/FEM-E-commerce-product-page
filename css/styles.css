@@ -79,8 +79,76 @@ button :hover {
   opacity: 0.7;
 }
 
-.collapse-btn {
-  margin: 30px;
+.item-box {
+  width: 100%;
+  position: relative;
+  background-color: aqua;
+  height: 500px;
+}
+
+.item-img {
+  width: 100%;
+  height: auto;
+}
+
+.caroussel-box {
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 50%;
+  position: absolute;
+  width: 5vw;
+  height: 5vw;
+  top: 50%;
+  overflow: visible;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.caroussel-box.left {
+  left: 2vw;
+}
+
+.caroussel-box.right {
+  right: 2vw;
+}
+
+.navigation-img {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+  margin: auto;
+}
+
+.item-name {
+  color: hsl(0deg, 0%, 0%);
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.item-header {
+  color: hsl(26deg, 100%, 55%);
+}
+
+.item-info {
+  color: hsl(219deg, 9%, 45%);
+}
+
+.price {
+  color: hsl(0deg, 0%, 0%);
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.discount {
+  background-color: hsl(25deg, 100%, 94%);
+  color: hsl(26deg, 100%, 55%);
+  margin: auto;
+}
+
+.regular {
+  color: hsl(219deg, 9%, 45%);
+  margin: auto;
+  text-decoration: line-through;
 }
 
 * {

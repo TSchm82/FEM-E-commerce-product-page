@@ -1,0 +1,75 @@
+@import "colors";
+
+@mixin highligthed {
+    color: $--neutral-black;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.item-box {
+    width: 100%;
+    position: relative;
+    background-color: aqua;
+    height: 500px;
+}
+
+.item-img {
+    width: 100%;
+    height: auto;
+}
+
+.caroussel-box {
+    background-color: $--neutral-white;
+    border-radius: 50%;
+    position: absolute;
+    width: 5vw;
+    height: 5vw;
+    top: 50%;
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.caroussel-box.left {
+    left: 2vw;
+}
+
+.caroussel-box.right {
+    right: 2vw;
+}
+
+.navigation-img {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+    margin: auto;
+}
+
+.item-name {
+    @include highligthed;
+}
+
+.item-header {
+    color: $--primary-orange;
+}
+
+.item-info {
+    color: $--neutral-dark-grayish-blue;
+}
+
+.price {
+    @include highligthed;
+}
+
+.discount {
+    background-color: $--primary-pale-orange;
+    color: $--primary-orange;
+    margin: auto;
+}
+
+.regular {
+    color: $--neutral-dark-grayish-blue;
+    margin: auto;
+    text-decoration: line-through;
+}
