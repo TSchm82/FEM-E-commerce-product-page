@@ -54,20 +54,21 @@ button :hover {
 }
 
 .company-name {
-  text-align: center;
   margin-top: auto;
   margin-bottom: auto;
+  padding-left: 5%;
+  text-align: start;
   color: hsl(0deg, 0%, 0%);
   font-size: 30px;
   font-weight: 700;
 }
 
 .mobile-menu {
-  min-height: 100vh;
-  width: 100%;
+  width: 100vw;
   position: absolute;
   left: 0;
   top: 0;
+  z-index: 2;
 }
 
 .main {
@@ -80,8 +81,8 @@ button :hover {
 }
 
 .item-box {
-  width: 100%;
   position: relative;
+  z-index: 1;
 }
 
 .item-img {
@@ -153,6 +154,8 @@ button :hover {
   font-family: "DM Sans", sans-serif;
   font-size: 20px;
   font-weight: 400;
+  padding: 0;
+  margin: 0;
 }
 
 body {
@@ -162,4 +165,12 @@ body {
 img {
   height: 40px;
   width: auto;
+}
+
+.row {
+  margin: 0;
+}
+
+.full-width {
+  width: 100%;
 }

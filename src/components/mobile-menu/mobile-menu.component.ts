@@ -1,22 +1,10 @@
-import { animate, style, transition, trigger } from '@angular/animations';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 
 @Component({
   selector: 'component-mobile-menu',
-  templateUrl: './mobile-menu.component.html',
-  animations: [
-    trigger('fadeInOut', [
-      transition(':enter', [   // :enter is alias to 'void => *'
-        style({ opacity: 0 }),
-        animate(500, style({ opacity: 1 }))
-      ]),
-      transition(':leave', [   // :leave is alias to '* => void'
-        animate(500, style({ opacity: 0 }))
-      ])
-    ])
-  ]
+  templateUrl: './mobile-menu.component.html'
 })
-export class MobileMenuComponent implements OnInit {
+export class MobileMenuComponent implements OnChanges {
 
   @Input() public isMenuExtended = false;
 
@@ -24,11 +12,26 @@ export class MobileMenuComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  public ngOnChanges(): void {
+    const div = document.getElementById("menu");
+
+    !!div && this.calculateHeight(div);
   }
 
   public collapse() {
     this.isMenuExtendedChange.emit(false);
+  }
+
+  public calculateHeight(div: HTMLElement) {
+    let scrollHeight = Math.max(
+      document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight,
+      document.body.clientHeight, document.documentElement.clientHeight
+    );
+
+    div.style.height = `${scrollHeight}px`;
+
+    console.log(scrollHeight)
   }
 
 }

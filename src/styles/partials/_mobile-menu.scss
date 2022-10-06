@@ -1,15 +1,14 @@
 @import "../partials/colors";
 
 .mobile-menu {
-    min-height: 100vh;
-    width: 100%;
+    width: 100vw;
     position: absolute;
     left: 0;
     top: 0;
+    z-index: 2;
 }
 
 .main {
-    // background-color: $--neutral-white;
     background-color: $--neutral-white;
 }
 

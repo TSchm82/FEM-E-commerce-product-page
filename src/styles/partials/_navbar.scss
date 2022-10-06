@@ -46,7 +46,10 @@
 }
 
 .company-name {
-    @include align-nav-item;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-left: 5%;
+    text-align: start;
     color: $--neutral-black;
     font-size: 30px;
     font-weight: 700;

@@ -15,7 +15,6 @@
         </div>
     </div>
 </div>
-
-<div>
+<ng-container *ngIf=" isMenuExtended ">
     <component-mobile-menu [(isMenuExtended)]=" isMenuExtended "></component-mobile-menu>
-</div>
+</ng-container>
