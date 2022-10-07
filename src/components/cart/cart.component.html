@@ -1,0 +1,18 @@
+<div class="cart-box">
+    <div class="full-width">
+        <h5>Cart</h5>
+
+        <div class="separator"></div>
+
+        <div class="items-box">
+            <div *ngIf=" !cart.length " class="empty-cart">Your cart is empty</div>
+        </div>
+    </div>
+
+    <div class="full-width">
+        <ng-container *ngFor="let cartItem of cart; let i = index">
+            <comp-cart-item [cartItem]="cartItem" [index]="i"></comp-cart-item>
+        </ng-container>
+    </div>
+
+</div>

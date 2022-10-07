@@ -1,0 +1,39 @@
+@import "../partials/colors";
+
+.cart-box {
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    padding: 2%;
+    position: absolute;
+    min-height: 30vh;
+    z-index: 3;
+    border-radius: 25px;
+
+    background-color: $--neutral-white;
+}
+
+.separator {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.items-box {
+    display: flex;
+    height: 100%;
+
+    & :first-child {
+        width: 100%;
+    }
+}
+
+.empty-cart {
+    margin-top: 100px;
+    color: black;
+    text-align: center;
+}

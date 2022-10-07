@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActionsService } from 'src/services/actions.service';
 
 @Component({
   selector: 'components-navbar',
@@ -10,7 +11,9 @@ export class NavbarComponent implements OnInit {
 
   public isMenuExtended = false;
 
-  constructor() { }
+  private isCardExtended = false;
+
+  constructor(public actionsService: ActionsService) { }
 
   ngOnInit(): void {
   }
@@ -18,6 +21,12 @@ export class NavbarComponent implements OnInit {
   public extendMenu() {
     console.log('clicked')
     this.isMenuExtended = !this.isMenuExtended;
+  }
+
+  public openCart() {
+    this.isCardExtended = !this.isCardExtended;
+
+    this.actionsService.openCart.next(this.isCardExtended);
   }
 
 }

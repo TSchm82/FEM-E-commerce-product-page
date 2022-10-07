@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { CartItem } from 'src/item';
 
 @Component({
   selector: 'component-add-to-cart',
@@ -6,7 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class AddToCartComponent implements OnInit {
 
-  @Output() public addItems = new EventEmitter<number>();
+  @Output() public addItems = new EventEmitter<CartItem>();
 
   public counter = 0;
 
@@ -24,9 +25,17 @@ export class AddToCartComponent implements OnInit {
   }
 
   public addItemsToCart() {
-    console.log('addtocart')
+    const cartItem = {
+      item: {
+        img: 'image-product-1-thumbnail',
+        name: 'Fall Limited Edition Sneakers',
+        price: 125
+      },
+      quantity: this.counter
+    }
 
-    this.addItems.emit(this.counter);
+
+    this.addItems.emit(cartItem);
   }
 
 }

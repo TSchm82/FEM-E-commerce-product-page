@@ -12,7 +12,7 @@
 
     <div class="box justify-end">
         <div class="cl nav-icon">
-            <div class="cartbox">
+            <div class="cartbox" (click)=" openCart() ">
                 <img class="img-sizing" src="../../assets/images/icon-cart.svg">
                 <span *ngIf=" counter > 0 " class="item-indicator">{{ counter }}</span>
             </div>

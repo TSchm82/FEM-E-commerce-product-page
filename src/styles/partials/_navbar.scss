@@ -72,6 +72,10 @@
 
 .cartbox {
     position: relative;
+
+    & :hover {
+        cursor: grab;
+    }
 }
 
 .justify-end {

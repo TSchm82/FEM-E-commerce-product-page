@@ -1,0 +1,49 @@
+.cart-item-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+@mixin align-item {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.c-item-preview {
+    @include align-item;
+    height: 100%;
+    width: 50px;
+}
+
+.c-item-info {
+    height: 100%;
+    width: 65%;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.c-item-delete {
+    @include align-nav-item;
+    height: 100%;
+    width: 50px;
+}
+
+.c-item-img-preview {
+    width: auto;
+    height: 80px;
+    object-fit: contain;
+}
+
+.c-item-img-delete {
+    width: auto;
+    height: 40px;
+    object-fit: contain;
+}
+
+.item-txt {
+    white-space: nowrap; //this prevents line breaks
+    overflow: hidden; //this hides text that doesnt fit within the div
+    text-overflow: ellipsis; //this adds the ellipsis to the cutoff point
+}
