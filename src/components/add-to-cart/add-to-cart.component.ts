@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CartItem } from 'src/item';
+import { ActionsService } from 'src/services/actions.service';
 
 @Component({
   selector: 'component-add-to-cart',
@@ -11,7 +12,7 @@ export class AddToCartComponent implements OnInit {
 
   public counter = 0;
 
-  constructor() { }
+  constructor(public actionsService: ActionsService) { }
 
   ngOnInit(): void {
   }

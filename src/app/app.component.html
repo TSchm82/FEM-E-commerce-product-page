@@ -2,11 +2,10 @@
     <!--Navbar-->
     <components-navbar [counter]=" cart.length ? cart[0].quantity : 0"></components-navbar>
 
+    <!--Cart-->
     <ng-container *ngIf=" actionsService.openCart | async ">
         <component-cart [cart]="cart"></component-cart>
     </ng-container>
     <!--Item Page-->
-    <component-item></component-item>
-    <!--Add to card-->
-    <component-add-to-cart (addItems)=" cart.push($event) "></component-add-to-cart>
+    <component-item [cart]="cart"></component-item>
 </div>

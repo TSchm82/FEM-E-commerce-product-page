@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Injectable, OnInit } from '@angular/core';
+import { fromEvent, Observable, Subject, Subscription } from 'rxjs';
 import { CartItem } from 'src/item';
 
 @Injectable({
@@ -11,5 +11,12 @@ export class ActionsService {
 
   public deleteCartItem = new Subject<CartItem>();
 
+  public isMobile$ = new Subject<boolean>();
+
   constructor() { }
+
+}
+
+export function checkDevice() {
+  return document.body.scrollWidth < 1200;
 }

@@ -1,6 +1,7 @@
 import { AfterViewInit, Component } from '@angular/core';
+import { Subject } from 'rxjs';
 import { CartItem } from 'src/item';
-import { ActionsService } from 'src/services/actions.service';
+import { ActionsService, checkDevice } from 'src/services/actions.service';
 
 @Component({
   selector: 'app-root',
@@ -14,18 +15,23 @@ export class AppComponent implements AfterViewInit {
   constructor(public actionsService: ActionsService) { }
 
   public ngAfterViewInit(): void {
-    this.actionsService.deleteCartItem.subscribe(cartToDelete => this.removeItemFromCart(cartToDelete))
+    const service = this.actionsService;
+    service.deleteCartItem.subscribe(cartToDelete => this.removeItemFromCart(cartToDelete));
+
+    service.openCart.subscribe(isExtended => {
+      // Delay because the component need to be initialized first
+      requestAnimationFrame(() => isExtended && service.isMobile$.next(checkDevice()));
+    })
+
+    window.addEventListener('resize', () => service.isMobile$.next(checkDevice()));
+
+    service.isMobile$.next(checkDevice());
   }
 
   private removeItemFromCart(cartToDelete: CartItem) {
     const index = this.cart.indexOf(cartToDelete);
-    console.log(index)
-
-    console.log(JSON.parse(JSON.stringify(this.cart)));
 
     this.cart.splice(index, 1);
-
-    console.log(this.cart)
   }
 
 }

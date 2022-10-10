@@ -1,10 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { CartItem } from 'src/item';
+import { ActionsService } from 'src/services/actions.service';
 
 @Component({
   selector: 'component-item',
   templateUrl: './item.component.html'
 })
 export class ItemComponent implements OnInit {
+
+  @Input() public cart: CartItem[];
 
   public imgPath = '../../assets/images/'
 
@@ -17,14 +21,16 @@ export class ItemComponent implements OnInit {
 
   public actualImgIndex = 0;
 
-  constructor() { }
+  constructor(public actionsService: ActionsService) { }
 
   ngOnInit(): void {
-    this.setImgLink(this.actualImgIndex);
-  }
+    this.actionsService.isMobile$.subscribe(() => {
 
-  public nextImg() {
-
+      // Delay because the component need to be initialized first
+      requestAnimationFrame(() => {
+        this.setImgLink(this.actualImgIndex);
+      })
+    })
   }
 
   public rotateCaroussel(modifier: number) {
@@ -39,6 +45,10 @@ export class ItemComponent implements OnInit {
 
   public setImgLink(newIndex: number) {
     const img = document.getElementById("itemImg") as HTMLImageElement;
+
+    if (!img) {
+      return;
+    }
 
     this.actualImgIndex = newIndex;
 

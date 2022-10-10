@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActionsService } from 'src/services/actions.service';
+import { ActionsService, checkDevice } from 'src/services/actions.service';
 
 @Component({
   selector: 'components-navbar',
@@ -19,7 +19,6 @@ export class NavbarComponent implements OnInit {
   }
 
   public extendMenu() {
-    console.log('clicked')
     this.isMenuExtended = !this.isMenuExtended;
   }
 
