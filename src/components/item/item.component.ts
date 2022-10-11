@@ -5,8 +5,7 @@ import { CarousselService } from 'src/services/caroussel.service';
 
 @Component({
   selector: 'component-item',
-  templateUrl: './item.component.html',
-  providers: [CarousselService]
+  templateUrl: './item.component.html'
 })
 export class ItemComponent implements OnInit {
 

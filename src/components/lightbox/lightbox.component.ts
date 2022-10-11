@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActionsService } from 'src/services/actions.service';
 import { CarousselService } from 'src/services/caroussel.service';
 
@@ -6,14 +6,22 @@ import { CarousselService } from 'src/services/caroussel.service';
   selector: 'component-lightbox',
   templateUrl: './lightbox.component.html'
 })
-export class LightboxComponent implements OnInit {
+export class LightboxComponent implements OnInit, OnDestroy {
 
   constructor(public cS: CarousselService, public actionsService: ActionsService) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     const carousselService = this.cS;
+    const index = carousselService.actualImgIndex;
 
-    carousselService.setImgLink(carousselService.actualImgIndex, 'lightboxImg');
+    carousselService.setImgLink(index, 'lightboxImg');
+  }
+
+  public ngOnDestroy(): void {
+    const carousselService = this.cS;
+    const index = carousselService.actualImgIndex;
+
+    carousselService.setImgLink(index);
   }
 
 }
