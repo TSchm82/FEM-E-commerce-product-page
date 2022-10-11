@@ -27,6 +27,7 @@ export class ItemComponent implements OnInit {
 
   public handleLightBox() {
     this.actionsService.isLightbox = !this.actionsService.isLightbox;
+    this.actionsService.isMobile$.next(false);
   }
 
 }

@@ -7,13 +7,10 @@
         <component-cart [cart]="cart"></component-cart>
     </ng-container>
     <!--Item Page-->
+    <div *ngIf=" !(actionsService.isMobile$ | async) " class="xl-conten-separator"></div>
+
     <component-item [cart]="cart"></component-item>
 </div>
 
-<!-- <div *ngIf=" actionsService.isLightbox$ | async " class="lightbox">
-    <component-lightbox class="lightbox-container"></component-lightbox>
-</div> -->
-
-<div>
-    <component-lightbox *ngIf=" actionsService.isLightbox " class="lightbox"></component-lightbox>
-</div>
+<component-lightbox *ngIf=" actionsService.isLightbox && !(actionsService.isMobile$ | async)" class="lightbox">
+</component-lightbox>

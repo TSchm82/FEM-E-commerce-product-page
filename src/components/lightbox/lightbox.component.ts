@@ -22,6 +22,8 @@ export class LightboxComponent implements OnInit, OnDestroy {
     const index = carousselService.actualImgIndex;
 
     carousselService.setImgLink(index);
+
+    this.actionsService.isLightbox = false;
   }
 
 }
