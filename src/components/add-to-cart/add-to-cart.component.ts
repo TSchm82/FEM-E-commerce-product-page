@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CartItem } from 'src/item';
 import { ActionsService } from 'src/services/actions.service';
 
@@ -7,6 +7,8 @@ import { ActionsService } from 'src/services/actions.service';
   templateUrl: './add-to-cart.component.html'
 })
 export class AddToCartComponent implements OnInit {
+
+  @Input() public isMobile: boolean;
 
   @Output() public addItems = new EventEmitter<CartItem>();
 

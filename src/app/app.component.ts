@@ -12,6 +12,8 @@ export class AppComponent implements AfterViewInit {
   public cart: CartItem[] = [
   ];
 
+  public isLightboxDisplayed = false;
+
   constructor(public actionsService: ActionsService) { }
 
   public ngAfterViewInit(): void {

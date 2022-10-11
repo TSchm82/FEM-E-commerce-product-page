@@ -6,6 +6,7 @@ import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
 import { CartComponent } from './cart/cart.component';
 import { ItemComponent } from './item/item.component';
+import { LightboxComponent } from './lightbox/lightbox.component';
 import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 
 @NgModule({
@@ -15,7 +16,8 @@ import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
         ItemComponent,
         AddToCartComponent,
         CartComponent,
-        CartItemComponent
+        CartItemComponent,
+        LightboxComponent
     ],
     imports: [
         CommonModule
@@ -24,9 +26,9 @@ import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
         NavbarComponent,
         MobileMenuComponent,
         ItemComponent,
-        AddToCartComponent,
         CartComponent,
-        CartItemComponent
+        CartItemComponent,
+        LightboxComponent
     ]
 })
 export class ComponentsModule { }

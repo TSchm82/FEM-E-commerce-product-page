@@ -1,0 +1,31 @@
+<div class="lightbox-container">
+
+    <div class="close-lightbox">
+        <svg class="white-img" width="50" height="50" viewBox="0 0 14 15" xmlns="http://www.w3.org/2000/svg"
+            (click)=" actionsService.isLightbox = !actionsService.isLightbox">
+            <path
+                d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" />
+        </svg>
+    </div>
+
+    <div class="item-box full-width">
+        <img id="lightboxImg" class="item-img">
+
+        <button *ngIf=" cS.actualImgIndex !== 0 " class="caroussel-box lb-left"
+            (click)="cS.rotateCaroussel(-1, 'lightboxImg')"><img class="navigation-img"
+                src="../../assets/images/icon-previous.svg"></button>
+
+        <button *ngIf=" cS.actualImgIndex !== cS.imgNames.length -1 " class="caroussel-box lb-right"
+            (click)="cS.rotateCaroussel(1, 'lightboxImg')"><img class="navigation-img"
+                src="../../assets/images/icon-next.svg"></button>
+    </div>
+
+    <div class="caroussel-box-xl">
+        <ng-container *ngFor="let imgName of cS.imgNames, let i = index">
+            <div class="caroussel-box-xl-item">
+                <img class="item-img" [class.selected]="i === cS.actualImgIndex" [src]=" cS.geCarousselImage(imgName) "
+                    (click)=" cS.setImgLink(i, 'lightboxImg') ">
+            </div>
+        </ng-container>
+    </div>
+</div>

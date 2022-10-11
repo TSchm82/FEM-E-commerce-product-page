@@ -1,0 +1,32 @@
+@import '../partials/colors';
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: $--neutral-black-opacity;
+    justify-content: center;
+}
+
+.lightbox-container {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 45%;
+}
+
+.close-lightbox {
+    width: 100%;
+    text-align: end;
+    margin-bottom: 40px;
+}
+
+.caroussel-lightbox.left {
+    left: -50%;
+}
+
+.caroussel-lightbox.right {
+    right: -50%;
+}

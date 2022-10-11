@@ -9,3 +9,11 @@
     <!--Item Page-->
     <component-item [cart]="cart"></component-item>
 </div>
+
+<!-- <div *ngIf=" actionsService.isLightbox$ | async " class="lightbox">
+    <component-lightbox class="lightbox-container"></component-lightbox>
+</div> -->
+
+<div>
+    <component-lightbox *ngIf=" actionsService.isLightbox " class="lightbox"></component-lightbox>
+</div>

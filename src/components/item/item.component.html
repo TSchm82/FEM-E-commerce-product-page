@@ -3,14 +3,15 @@
     <div class="item-box full-width">
         <img id="itemImg" class="item-img">
 
-        <button *ngIf=" actualImgIndex !== 0 " class="caroussel-box left" (click)="rotateCaroussel(-1)"><img
+        <button *ngIf=" cS.actualImgIndex !== 0 " class="caroussel-box left" (click)="cS.rotateCaroussel(-1)"><img
                 class="navigation-img" src="../../assets/images/icon-previous.svg"></button>
 
-        <button *ngIf=" actualImgIndex !== imgNames.length -1 " class="caroussel-box right"
-            (click)="rotateCaroussel(1)"><img class="navigation-img" src="../../assets/images/icon-next.svg"></button>
+        <button *ngIf=" cS.actualImgIndex !== cS.imgNames.length -1 " class="caroussel-box right"
+            (click)="cS.rotateCaroussel(1)"><img class="navigation-img"
+                src="../../assets/images/icon-next.svg"></button>
     </div>
 
-    <ng-container *ngTemplateOutlet="itemInfo"></ng-container>
+    <ng-container *ngTemplateOutlet="itemInfo; context: {$implicit: isMobile}"></ng-container>
 
 
     <!--Add to card-->
@@ -18,18 +19,29 @@
 
 </ng-container>
 
-<ng-container *ngIf=" !(actionsService.isMobile$ | async) ">
+<ng-container *ngIf=" !(actionsService.isMobile$ | async) as isMobile">
 
     <div class="box-flex-wide">
-        <div class="flex-item-wide">left</div>
         <div class="flex-item-wide">
-            <ng-container *ngTemplateOutlet="itemInfo"></ng-container>
+            <img id="itemImg" class="item-img" (click)=" handleLightBox() ">
+
+            <div class="caroussel-box-xl">
+                <ng-container *ngFor="let imgName of cS.imgNames, let i = index">
+                    <div class="caroussel-box-xl-item">
+                        <img class="item-img" [class.selected]="i === cS.actualImgIndex"
+                            [src]=" cS.geCarousselImage(imgName) " (click)="cS.setImgLink(i)">
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+        <div class="flex-item-wide">
+            <ng-container *ngTemplateOutlet="itemInfo; context: {$implicit: isMobile}"></ng-container>
         </div>
     </div>
 
 </ng-container>
 
-<ng-template #itemInfo>
+<ng-template #itemInfo let-isMobile>
     <div class="container">
         <div class="item-header my-2">Sneaker Company</div>
         <div class="item-name mb-2">Fall Limited Edition Sneaker</div>
@@ -47,5 +59,5 @@
         </div>
     </div>
 
-    <component-add-to-cart (addItems)=" cart.push($event) "></component-add-to-cart>
+    <component-add-to-cart [isMobile]=" isMobile " (addItems)=" cart.push($event) "></component-add-to-cart>
 </ng-template>
