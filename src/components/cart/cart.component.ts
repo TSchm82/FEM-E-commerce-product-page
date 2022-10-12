@@ -10,8 +10,6 @@ export class CartComponent {
 
   @Input() public cart: CartItem[];
 
-  public isMobile: boolean;
-
   constructor(public actionsService: ActionsService) { }
 
 }

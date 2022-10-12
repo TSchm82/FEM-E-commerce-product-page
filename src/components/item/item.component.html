@@ -13,10 +13,6 @@
 
     <ng-container *ngTemplateOutlet="itemInfo; context: {$implicit: isMobile}"></ng-container>
 
-
-    <!--Add to card-->
-    <!-- <component-add-to-cart (addItems)=" cart.push($event) "></component-add-to-cart> -->
-
 </ng-container>
 
 <ng-container *ngIf=" !(actionsService.isMobile$ | async) as isMobile">
