@@ -3,7 +3,7 @@
 
 @mixin highligthed {
     color: $--neutral-black;
-    font-size: 36px;
+    font-size: max(33px, 2.5vw);
     font-weight: 700;
 }
 

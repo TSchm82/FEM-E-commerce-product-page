@@ -1,5 +1,14 @@
 @import "./navbar";
 @import "./colors";
+@import "./breakpoints";
+
+.add-cart-row {
+    display: block;
+
+    @include respond-to-min('xl') {
+        display: flex;
+    }
+}
 
 @mixin add-container {
     width: 80%;
@@ -9,6 +18,10 @@
     justify-content: center;
     margin-bottom: 5%;
     border-radius: 25px;
+
+    @include respond-to-min('xl') {
+        width: 40%;
+    }
 }
 
 .quantity-container {
@@ -27,6 +40,10 @@
 
 .add-bar-button {
     width: 5vw;
+
+    @include respond-to-min('xl') {
+        width: 2vw;
+    }
 }
 
 .add-bar-img {
