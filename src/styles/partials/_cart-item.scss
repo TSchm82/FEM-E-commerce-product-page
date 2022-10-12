@@ -41,6 +41,10 @@
     width: auto;
     height: 40px;
     object-fit: contain;
+
+    &:hover {
+        cursor: grab;
+    }
 }
 
 .item-txt {

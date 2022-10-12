@@ -22,6 +22,10 @@
     width: 100%;
     text-align: end;
     margin-bottom: 40px;
+
+    &:hover {
+        cursor: grab;
+    }
 }
 
 .caroussel-lightbox.left {
