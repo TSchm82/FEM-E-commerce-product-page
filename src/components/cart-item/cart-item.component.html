@@ -1,17 +1,17 @@
-<div class="cart-item-box">
+<div class="c-item">
     <div style="width: 90%; display: flex">
-        <span class="c-item-preview"><img id="preview{{index}}" class="c-item-img-preview">
+        <span class="c-item__preview"><img id="preview{{index}}" class="c-item__img--preview">
         </span>
 
-        <span class="c-item-info">
-            <div class="item-txt" style="width: 100%">{{ cartItem.item.name }}</div>
-            <div class="item-txt" style="width: 100%">{{ cartItem.item.price | currency: '$'}} * {{ cartItem.quantity
+        <span class="c-item__info">
+            <div class="c-item__txt" style="width: 100%">{{ cartItem.item.name }}</div>
+            <div class="c-item__txt" style="width: 100%">{{ cartItem.item.price | currency: '$'}} * {{ cartItem.quantity
                 }} / <span style="font-weight: 700;">{{ (cartItem.item.price* cartItem.quantity) | currency:
                     '$'}}</span>
             </div>
         </span>
     </div>
 
-    <div class="c-item-delete"> <img class="c-item-img-delete" src="../../assets/images/icon-delete.svg"
+    <div class="c-item__delete"> <img class="c-item__img--delete" src="../../assets/images/icon-delete.svg"
             (click)=" removeFromCart() "></div>
 </div>
