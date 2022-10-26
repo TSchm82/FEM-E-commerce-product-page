@@ -1,5 +1,4 @@
-@import "../partials/colors";
-@import "../partials/breakpoints";
+@use "./../util/index" as *;
 
 .cart-box {
     width: 96%;
@@ -11,7 +10,6 @@
     min-height: 30vh;
     z-index: 3;
     border-radius: 25px;
-
     background-color: $--neutral-white;
 
     @include respond-to-min('xl') {
@@ -21,7 +19,6 @@
             -10px 8px 15px silver,
             10px 8px 15px silver;
     }
-
 }
 
 .separator {

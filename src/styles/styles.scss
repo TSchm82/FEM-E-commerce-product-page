@@ -1,12 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import "./partials/button";
-@import "./partials/navbar";
-@import "./partials/mobile-menu";
-@import "./partials/item";
-@import "./partials/add-to-cart";
-@import "./partials/cart";
-@import "./partials/cart-item";
-@import "./partials/lightbox";
+@use "./util/index" as *;
+@forward "./component/index";
 
 * {
     box-sizing: border-box;
@@ -27,6 +21,16 @@ img {
     width: auto;
 }
 
+button {
+    background-color: $--neutral-white;
+    border: none;
+
+    & :hover {
+        cursor: grab;
+    }
+}
+
+// Genral Stylings
 .full-width {
     width: 100%;
 }
@@ -41,7 +45,7 @@ img {
     display: flex;
 }
 
-.xl-conten-separator {
+.xl-content-separator {
     display: block;
     height: 1px;
     border-top: 1px solid #ccc;

@@ -1,8 +1,4 @@
-@mixin align-item {
-    text-align: center;
-    margin-top: auto;
-    margin-bottom: auto;
-}
+@use "./../util/index" as *;
 
 .c-item {
     width: 100%;
@@ -11,7 +7,7 @@
     margin-bottom: 50px;
 
     &__preview {
-        @include align-item;
+        @include align;
         height: 100%;
         width: 50px;
     }
@@ -24,21 +20,22 @@
     }
 
     &__delete {
-        @include align-nav-item;
+        @include align-item;
         height: 100%;
         width: 50px;
     }
 
     &__img {
-        width: auto;
-        object-fit: contain;
-
         &--preview {
+            width: auto;
+            object-fit: contain;
             height: 80px;
             border-radius: 25px;
         }
 
         &--delete {
+            width: auto;
+            object-fit: contain;
             height: 40px;
 
             &:hover {

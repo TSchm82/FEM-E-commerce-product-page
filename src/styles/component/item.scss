@@ -1,5 +1,4 @@
-@import "colors";
-@import "./breakpoints";
+@use "./../util/index" as *;
 
 @mixin highligthed {
     color: $--neutral-black;
