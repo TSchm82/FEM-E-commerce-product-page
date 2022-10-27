@@ -16,7 +16,7 @@
     border-bottom: abstract.$primary--orange solid;
     width: 100%;
     position: absolute;
-    bottom: -1.7rem;
+    bottom: -1.25rem;
     left: 0;
 }
 
@@ -29,6 +29,7 @@
     }
 
     cursor: grab;
+    font-size: abstract.$font-size-md;
 
     &:hover {
         :first-child {
