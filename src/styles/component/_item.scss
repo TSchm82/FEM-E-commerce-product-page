@@ -1,8 +1,8 @@
-@use "./../util/index" as *;
+@use "./../util/abstract";
 
 @mixin highligthed {
-    color: $--neutral-black;
-    font-size: max(33px, 2.5vw);
+    color: abstract.$neutral--black;
+    font-size: abstract.$font-size-xl;
     font-weight: 700;
 }
 
@@ -15,14 +15,14 @@
     width: 100%;
     height: auto;
 
-    @include respond-to-min('xl') {
+    @include abstract.respond-to-min('xl') {
         border-radius: 25px;
     }
 
     &.selected {
-        border-color: $--primary-orange;
+        border-color: abstract.$primary--orange;
         border-style: solid;
-        border-width: 5px;
+        border-width: 0.3rem;
         opacity: 0.7;
     }
 
@@ -31,8 +31,8 @@
     }
 }
 
-.caroussel-box {
-    background-color: $--neutral-white;
+.caroussel {
+    background-color: abstract.$neutral--white;
     border-radius: 50%;
     position: absolute;
     width: 5vw;
@@ -60,14 +60,6 @@
 
 }
 
-.caroussel-box.left {
-    left: 2vw;
-}
-
-.caroussel-box.right {
-    right: 2vw;
-}
-
 .navigation-img {
     width: 50%;
     height: 50%;
@@ -80,11 +72,12 @@
 }
 
 .item-header {
-    color: $--primary-orange;
+    color: abstract.$primary--orange;
 }
 
 .item-info {
-    color: $--neutral-dark-grayish-blue;
+    color: abstract.$neutral--dark-grayish-blue;
+    font-size: abstract.$font-size-md;
 }
 
 .price {
@@ -92,33 +85,35 @@
 }
 
 .discount {
-    background-color: $--primary-pale-orange;
-    color: $--primary-orange;
+    background-color: abstract.$primary--pale-orange;
+    color: abstract.$primary--orange;
     margin: auto;
+    font-size: abstract.$font-size-md;
     font-weight: 700;
 }
 
 .regular {
-    color: $--neutral-dark-grayish-blue;
+    color: abstract.$neutral--dark-grayish-blue;
     margin: auto;
+    font-size: abstract.$font-size-md;
     text-decoration: line-through;
 }
 
-.box-flex-wide {
+.item-box-xl {
     display: flex;
 }
 
-.flex-item-wide {
+.item-box-xl-unit {
     width: 50%;
     padding: 5%;
 }
 
-.caroussel-box-xl {
+.caroussel-xl {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 1.25rem;
 }
 
-.caroussel-box-xl-item {
+.caroussel-xl-item {
     width: 22%;
 }

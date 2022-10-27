@@ -1,0 +1,53 @@
+$primary--pale-orange: hsl(25, 100%, 94%);
+$primary--orange: hsl(26, 100%, 55%);
+$neutral--very-vark-blue: hsl(220, 13%, 13%);
+$neutral--dark-grayish-blue: hsl(219, 9%, 45%);
+$neutral--grayish-blue: hsl(220, 14%, 75%);
+$neutral--light-grayish-blue: hsl(223, 64%, 98%);
+$neutral--white: hsl(0, 0%, 100%);
+$neutral--black: hsl(0, 0%, 0%);
+$neutral--black-opacity: hsl(0, 0%, 0%, 0.7);
+
+$font-size-sm: clamp(0.8rem, 0.15vw + 0.76rem, 0.89rem);
+$font-size-base: clamp(1rem, 0.3vw + 0.93rem, 1.19rem);
+$font-size-md: clamp(1.25rem, 0.53vw + 1.12rem, 1.58rem);
+$font-size-lg: clamp(1.56rem, 0.88vw + 1.34rem, 2.11rem);
+$font-size-xl: clamp(1.95rem, 1.38vw + 1.61rem, 2.81rem);
+$font-size-xxl: clamp(2.44rem, 2.09vw + 1.92rem, 3.75rem);
+$font-size-xxxl: clamp(3.05rem, 3.11vw + 2.27rem, 5rem);
+
+$breakpoints: (
+    'sm': 576px,
+    'md': 768px,
+    'lg': 992px,
+    'xl': 1200px) !default;
+
+@mixin respond-to-max($breakpoint) {
+
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $breakpoint) {
+
+        // Prints a media query based on the value
+        @media (max-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+}
+
+@mixin respond-to-min($breakpoint) {
+
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $breakpoint) {
+
+        // Prints a media query based on the value
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+}
+
+@mixin align {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}

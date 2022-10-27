@@ -11,18 +11,18 @@
     <div class="item-box full-width">
         <img id="lightboxImg" class="item-img">
 
-        <button *ngIf=" cS.actualImgIndex !== 0 " class="caroussel-box lb-left"
+        <button *ngIf=" cS.actualImgIndex !== 0 " class="caroussel lb-left"
             (click)="cS.rotateCaroussel(-1, 'lightboxImg')"><img class="navigation-img"
                 src="../../assets/images/icon-previous.svg"></button>
 
-        <button *ngIf=" cS.actualImgIndex !== cS.imgNames.length -1 " class="caroussel-box lb-right"
+        <button *ngIf=" cS.actualImgIndex !== cS.imgNames.length -1 " class="caroussel lb-right"
             (click)="cS.rotateCaroussel(1, 'lightboxImg')"><img class="navigation-img"
                 src="../../assets/images/icon-next.svg"></button>
     </div>
 
-    <div class="caroussel-box-xl">
+    <div class="caroussel-xl">
         <ng-container *ngFor="let imgName of cS.imgNames, let i = index">
-            <div class="caroussel-box-xl-item">
+            <div class="caroussel-xl-item">
                 <img class="item-img" [class.selected]="i === cS.actualImgIndex" [src]=" cS.geCarousselImage(imgName) "
                     (click)=" cS.setImgLink(i, 'lightboxImg') ">
             </div>

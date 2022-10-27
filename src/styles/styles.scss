@@ -1,11 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
-@use "./util/index" as *;
+/* Global styles */
+@use "./util/index" as util;
 @forward "./component/index";
 
 * {
     box-sizing: border-box;
-    font-family: 'DM Sans', sans-serif;
-    font-size: max(20px, 1.5vw);
+    font-family: 'Kumbh Sans';
     font-weight: 400;
     padding: 0;
     margin: 0;
@@ -22,7 +21,7 @@ img {
 }
 
 button {
-    background-color: $--neutral-white;
+    background-color: util.$neutral--white;
     border: none;
 
     & :hover {
@@ -30,7 +29,6 @@ button {
     }
 }
 
-// Genral Stylings
 .full-width {
     width: 100%;
 }

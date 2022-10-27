@@ -1,0 +1,35 @@
+@use "./../util/abstract";
+
+.mobile-menu {
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    display: flex;
+}
+
+.main {
+    background-color: abstract.$neutral--white;
+    width: 66%;
+}
+
+.transparent {
+    background-color: abstract.$neutral--black;
+    opacity: 0.7;
+    width: 34%;
+}
+
+.menu-item {
+    margin-left: 4rem;
+    margin-bottom: 3rem;
+    font-size: abstract.$font-size-xl;
+
+    &:hover {
+        cursor: grab;
+    }
+}
+
+.menu-close {
+    margin: 4rem;
+}

@@ -3,10 +3,10 @@
     <div class="item-box full-width">
         <img id="itemImg" class="item-img">
 
-        <button *ngIf=" cS.actualImgIndex !== 0 " class="caroussel-box left" (click)="cS.rotateCaroussel(-1)"><img
+        <button *ngIf=" cS.actualImgIndex !== 0 " class="caroussel left" (click)="cS.rotateCaroussel(-1)"><img
                 class="navigation-img" src="../../assets/images/icon-previous.svg"></button>
 
-        <button *ngIf=" cS.actualImgIndex !== cS.imgNames.length -1 " class="caroussel-box right"
+        <button *ngIf=" cS.actualImgIndex !== cS.imgNames.length -1 " class="caroussel right"
             (click)="cS.rotateCaroussel(1)"><img class="navigation-img"
                 src="../../assets/images/icon-next.svg"></button>
     </div>
@@ -17,20 +17,20 @@
 
 <ng-container *ngIf=" !(actionsService.isMobile$ | async) as isMobile">
 
-    <div class="box-flex-wide">
-        <div class="flex-item-wide">
+    <div class="item-box-xl">
+        <div class="item-box-xl-unit">
             <img id="itemImg" class="item-img" (click)=" handleLightBox() ">
 
-            <div class="caroussel-box-xl">
+            <div class="caroussel-xl">
                 <ng-container *ngFor="let imgName of cS.imgNames, let i = index">
-                    <div class="caroussel-box-xl-item">
+                    <div class="caroussel-xl-item">
                         <img class="item-img" [class.selected]="i === cS.actualImgIndex"
                             [src]=" cS.geCarousselImage(imgName) " (click)="cS.setImgLink(i)">
                     </div>
                 </ng-container>
             </div>
         </div>
-        <div class="flex-item-wide">
+        <div class="item-box-xl-unit">
             <ng-container *ngTemplateOutlet="itemInfo; context: {$implicit: isMobile}"></ng-container>
         </div>
     </div>

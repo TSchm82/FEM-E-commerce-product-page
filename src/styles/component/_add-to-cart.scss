@@ -1,4 +1,4 @@
-@use "./../util/index" as *;
+@use "./../util/abstract";
 
 @mixin add-container {
     width: 80%;
@@ -9,7 +9,7 @@
     margin-bottom: 5%;
     border-radius: 25px;
 
-    @include respond-to-min('xl') {
+    @include abstract.respond-to-min('xl') {
         width: 40%;
     }
 }
@@ -17,42 +17,42 @@
 .add-bar {
     display: block;
 
-    @include respond-to-min('xl') {
+    @include abstract.respond-to-min('xl') {
         display: flex;
     }
 
     &__container {
         &--quantity {
             @include add-container;
-            background-color: $--neutral-light-grayish-blue;
+            background-color: abstract.$neutral--light-grayish-blue;
         }
 
         &--button {
             @include add-container;
-            background-color: $--primary-orange;
+            background-color: abstract.$primary--orange;
             padding: 2%;
         }
     }
 
     &__quantity-item {
-        @include align;
+        @include abstract.align;
         width: 33.3%;
         text-align: center;
         padding: 2%;
         font-weight: 700;
-        font-size: 36px;
+        font-size: abstract.$font-size-lg;
     }
 
     &__quantity-button {
         width: 5vw;
 
-        @include respond-to-min('xl') {
+        @include abstract.respond-to-min('xl') {
             width: 2vw;
         }
     }
 
     &__quantity-img {
-        width: 100%;
+        width: abstract.$font-size-lg;
         height: auto;
     }
 
@@ -60,8 +60,8 @@
         text-align: center;
         background-color: inherit;
         width: 100%;
-        color: $--neutral-white;
-        font-size: 26px;
+        color: abstract.$neutral--white;
+        font-size: abstract.$font-size-md;
         font-weight: 700;
     }
 

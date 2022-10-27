@@ -1,42 +1,38 @@
-@use "./../util/index" as *;
+@use "./../util/abstract";
 
 .c-item {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 50px;
+    margin-bottom: 3rem;
 
     &__preview {
-        @include align;
+        @include abstract.align;
         height: 100%;
-        width: 50px;
     }
 
     &__info {
-        height: 100%;
-        width: 65%;
-        margin-left: 50px;
-        margin-right: 50px;
+        width: 55%;
+        margin: auto 1rem;
     }
 
     &__delete {
-        @include align-item;
+        @include abstract.align;
         height: 100%;
-        width: 50px;
     }
 
     &__img {
         &--preview {
             width: auto;
             object-fit: contain;
-            height: 80px;
+            height: 5rem;
             border-radius: 25px;
         }
 
         &--delete {
             width: auto;
             object-fit: contain;
-            height: 40px;
+            height: 2.5rem;
 
             &:hover {
                 cursor: grab;
